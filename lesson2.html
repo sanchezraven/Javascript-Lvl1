@@ -1,0 +1,149 @@
+<script>
+
+	//Задание 1
+
+	var a = 1, b = 1, c, d;
+	c = ++a; alert(c);           // 2	в префиксной форме "а" сначала увеличивается на 1 потом возвращается, получаем 2;
+	d = b++; alert(d);           // 1	в постфиксной "b" сначала присвоится "d", а потом увеличится на 1;
+	c = (2+ ++a); alert(c);      // 5	"a" у нас равно 2 (из 1й строки), инкремент +1, получаем 3 и прибавляем 2, = 5;
+	d = (2+ b++); alert(d);      // 4	"b" у нас равно 2 (из 2й строки), инкремент +1 (но без возврата), получаем 2 и прибавляем 2, = 4;
+	alert(a);                    // 3	3 получилось при нахождении "с" (из 4 строки);
+	alert(b);                    // 3	теперь к полученному из 5 строки b=2 применится инкремент и получится 3.
+
+
+	//Задание 2
+
+	var a = 2;
+	var x = 1 + (a *= 2);	// x = 1 + (a = a * 2);
+							// x = 1 + (a = 2 * 2) =1 + 4 = 5.
+
+	//Задание 3
+		
+	var a = 15;
+	var b = -3;
+	if (a >=0 && b >=0){
+		alert(a - b);
+	}
+	else if(a < 0 && b < 0){
+		alert(a * b);
+	}
+	else{
+		alert(a + b);
+	}
+
+	//Задание 4
+
+	var a = parseInt(Math.random() * 16); /*вот тут вопрос, если укажу 15, то оно будет не включительно? (при генерации ни разу не выпало)
+	в лекции формула Math.random()*(max-min)+min,  а в интернетах: Math.random()*(max-min+1)+min */
+	
+	switch (a){							// Чувствую, можно было сделать проще)
+		case 0:
+			alert(0);
+		case 1:	
+			alert(1);
+		case 2:	
+			alert(2);
+		case 3:	
+			alert(3);
+		case 4:	
+			alert(4);
+		case 5:	
+			alert(5);
+		case 6:	
+			alert(6);
+		case 7:	
+			alert(7);
+		case 8:	
+			alert(8);
+		case 9:	
+			alert(9);
+		case 10:	
+			alert(10);
+		case 11:	
+			alert(11);
+		case 12:	
+			alert(12);
+		case 13:	
+			alert(13);
+		case 14:	
+			alert(14);
+		case 15:	
+			alert(15);
+			break;
+	}
+
+
+	//Задание 5
+
+	function Add (a,b){
+		c = a + b;
+		return c;
+	}
+
+	function Sub (a,b){
+		c = a - b;
+		return c;
+	}
+
+	function Mul (a,b){
+		c = a * b;
+		return c;
+	}
+
+	function Div (a,b){
+		c = a / b;
+		return c;
+	}
+
+	//Задание 6
+
+	function mathOperation(arg1, arg2, operation){
+		var result;
+		switch(operation){
+			case "+":
+			result= Add(arg1,arg2);
+			break;
+
+			case "-":
+			result= Sub(arg1,arg2);
+			break;
+
+			case "*":
+			result= Mul(arg1,arg2);
+			break;
+
+			case "/":
+			result= Div(arg1,arg2);
+			break;
+		}
+		alert(result);
+		return result;
+	}
+
+	mathOperation(3, 2, "/");
+
+	
+	//Задание 7
+
+	alert (0 === null); //false			разные типы		
+	alert (0 == null); //false			возвращается значение по умоланию
+	alert (0 > null);	//false			при операндах < и > null преобразуетс к числу (0), 0 не больше 0 и не меньше
+	alert (0 < null);	//false			
+	alert (0 >= null);	//true			здесь получается true, потому что (0 < null) - false	
+	alert (0 <= null);	//true			а здесь, потому что (0 > null) - false
+
+
+
+	//Задание 8
+
+	function power (val, pow){
+		if (pow ==0){
+			return 1;
+		}
+		return power(val, pow-1) * val;
+	}
+
+	alert (power (4,2));
+
+
+</script>
